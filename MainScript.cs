@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using PhotoNamespace;
 using PhotosHandlerNamespace;
-using VRAPIHandlerNamespace;
+using ARAPIHandlerNamespace;
 using TexturePainterNamespace;
 using SizeHandlerNamespace;
 
@@ -12,14 +12,14 @@ public class MainScript : MonoBehaviour {
 	public Material materialPhotoFrame;
 	public Text photoNameText;
 	public InputField codeInput;
-	private VRAPIHandler vrAPIHandler;
+	private ARAPIHandler arAPIHandler;
 	private PhotosHandler photosHandler;
 	private TexturePainter texturePainter;
 	private SizeHandler sizeHandler;
 
 	// Use this for initialization
 	void Start () {
-		this.vrAPIHandler = new VRAPIHandler();
+		this.arAPIHandler = new ARAPIHandler();
 		this.photosHandler = new PhotosHandler();
 		this.texturePainter = new TexturePainter(this.photosHandler);
 		this.sizeHandler = new SizeHandler(this.photosHandler);
@@ -32,7 +32,7 @@ public class MainScript : MonoBehaviour {
 	void OnGUI() {}
 
 	public void SubmittedCode() {
-		this.vrAPIHandler.PerformSessionRequest(this.codeInput.text, this.photosHandler);
+		this.arAPIHandler.PerformSessionRequest(this.codeInput.text, this.photosHandler);
 		this.DisplayPhoto();
 	}
 	public void ClickedNextPhoto() {

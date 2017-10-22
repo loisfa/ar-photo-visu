@@ -10,18 +10,18 @@ using PhotosHandlerNamespace;
 using PhotoNamespace;
 
 
-namespace VRAPIHandlerNamespace {
+namespace ARAPIHandlerNamespace {
 
-  public class VRAPIHandler {
+  public class ARAPIHandler {
 
     // prod
-    //private string urlForSessionPhotoNames = @"https://photo-web-api.herokuapp.com/api/vr/smartphone/";
-		//private string urlForPhotos = @"https://photo-web-api.herokuapp.com/api/photos/";
+    //private string urlForSessionPhotoNames = @"https://photo-web-api.herokuapp.com/api/ar/smartphone/";
+	//private string urlForPhotos = @"https://photo-web-api.herokuapp.com/api/photos/";
     // localhost
-    private string urlForSessionPhotoNames = @"http://localhost:8080/api/vr/smartphone";
-		private string urlForPhotos = @"http://localhost:8080/api/photos";
+    private string urlForSessionPhotoNames = @"http://localhost:8080/api/ar/smartphone";
+		private string urlForPhotos = @"http://localhost:8080/api/photo";
 
-		public VRAPIHandler() {}
+		public ARAPIHandler() {}
 
 		public void PerformSessionRequest(string code, PhotosHandler photosHandler) {
 			// should fill the listPhotos + display the first image on the plane
