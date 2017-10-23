@@ -6,7 +6,7 @@ namespace SizeHandlerNamespace {
 
   public class SizeHandler {
 		private PhotosHandler photosHandler;
-		private float scaleFactor=0.001f;
+		private float scaleFactor = 1 / 200f;
 		public SizeHandler(PhotosHandler photosHandler) {
 			this.photosHandler = photosHandler;
 		}

@@ -14,12 +14,16 @@ namespace ARAPIHandlerNamespace {
 
   public class ARAPIHandler {
 
+    /*
     // prod
     private string urlForSessionPhotoNames = @"https://photo-web-api.herokuapp.com/api/ar/smartphone/";
   	private string urlForPhotos = @"https://photo-web-api.herokuapp.com/api/photos/";
+    */
+
     // localhost
-    // private string urlForSessionPhotoNames = @"http://localhost:8080/api/ar/smartphone";
-		// private string urlForPhotos = @"http://localhost:8080/api/photo";
+    private string urlForSessionPhotoNames = @"http://localhost:8080/api/ar/smartphone";
+		private string urlForPhotos = @"http://localhost:8080/api/photo";
+
 
 		public ARAPIHandler() {}
 

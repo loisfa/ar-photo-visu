@@ -23,7 +23,7 @@ public class MainScript : MonoBehaviour {
 		this.photosHandler = new PhotosHandler();
 		this.texturePainter = new TexturePainter(this.photosHandler);
 		this.sizeHandler = new SizeHandler(this.photosHandler);
-		Debug.Log("photoNameText.text:"+this.photoNameText.text);
+		Debug.Log("photoNameText.text: "+this.photoNameText.text);
 	}
 
 	// Update is called once per frame
@@ -34,6 +34,7 @@ public class MainScript : MonoBehaviour {
 	public void SubmittedCode() {
 		Debug.Log("SubmittedCode");
 		this.arAPIHandler.PerformSessionRequest(this.codeInput.text, this.photosHandler);
+		this.RotateRight(-90);
 		this.DisplayPhoto();
 	}
 	public void ClickedNextPhoto() {
