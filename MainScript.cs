@@ -32,6 +32,7 @@ public class MainScript : MonoBehaviour {
 	void OnGUI() {}
 
 	public void SubmittedCode() {
+		Debug.Log("SubmittedCode");
 		this.arAPIHandler.PerformSessionRequest(this.codeInput.text, this.photosHandler);
 		this.DisplayPhoto();
 	}

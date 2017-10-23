@@ -15,11 +15,11 @@ namespace ARAPIHandlerNamespace {
   public class ARAPIHandler {
 
     // prod
-    //private string urlForSessionPhotoNames = @"https://photo-web-api.herokuapp.com/api/ar/smartphone/";
-	//private string urlForPhotos = @"https://photo-web-api.herokuapp.com/api/photos/";
+    private string urlForSessionPhotoNames = @"https://photo-web-api.herokuapp.com/api/ar/smartphone/";
+  	private string urlForPhotos = @"https://photo-web-api.herokuapp.com/api/photos/";
     // localhost
-    private string urlForSessionPhotoNames = @"http://localhost:8080/api/ar/smartphone";
-		private string urlForPhotos = @"http://localhost:8080/api/photo";
+    // private string urlForSessionPhotoNames = @"http://localhost:8080/api/ar/smartphone";
+		// private string urlForPhotos = @"http://localhost:8080/api/photo";
 
 		public ARAPIHandler() {}
 
@@ -41,7 +41,6 @@ namespace ARAPIHandlerNamespace {
 				string url = this.urlForSessionPhotoNames+"/"+code;
 				HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 				request.ContentType = "application/json; charset=utf-8";
-				request.AutomaticDecompression = DecompressionMethods.GZip;
 				using (HttpWebResponse response =  (HttpWebResponse)request.GetResponse())
 				using (Stream stream =  response.GetResponseStream())
 				using (StreamReader reader = new StreamReader(stream))
@@ -63,8 +62,8 @@ namespace ARAPIHandlerNamespace {
 			string url = this.urlForPhotos+"/"+photoName;
 
 			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-			request.ContentType = "application/json; charset=utf-8";
 			request.AutomaticDecompression = DecompressionMethods.GZip;
+      request.ContentType = "application/json; charset=utf-8";
 			using (HttpWebResponse response =  (HttpWebResponse)request.GetResponse()){
 			   using (BinaryReader reader = new BinaryReader(response.GetResponseStream())) {
 			      Byte[] image = reader.ReadBytes(1 * 1024 * 1024 * 10);
